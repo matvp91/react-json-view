@@ -17,6 +17,12 @@ export function toType(obj) {
 
 //source: http://stackoverflow.com/questions/7390426/better-way-to-get-type-of-a-javascript-variable/7390612#7390612
 function getType(obj) {
+    if (obj === null) {
+        return 'null';
+    }
+    if (obj === undefined) {
+        return 'undefined';
+    }
     return {}.toString
         .call(obj)
         .match(/\s([a-zA-Z]+)/)[1]
